@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShowTime — Book Your Experience</title>
+  <link rel="stylesheet" href="./src/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Show<span>Time</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="#">Movies</a></li>
+      <li><a href="#">Sports</a></li>
+      <li><a href="#">Music</a></li>
+    </ul>
+    <button class="nav-btn">Sign In</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-tag">✦ Book Instantly · No Fees · Best Seats</div>
+    <h1>Your Next <span>Unforgettable</span><br>Experience Awaits</h1>
+    <p>Browse movies, sports, concerts & comedy — and lock in your seat in seconds.</p>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search events, artists, venues..."/>
+      <button onclick="filterCards()">Search</button>
+    </div>
+  </section>
+
+  <!-- FILTER BUTTONS -->
+  <div class="filters">
+    <button class="filter-btn active" onclick="setFilter('all', this)">All Events</button>
+    <button class="filter-btn" onclick="setFilter('movie', this)">🎬 Movies</button>
+    <button class="filter-btn" onclick="setFilter('sports', this)">🏆 Sports</button>
+    <button class="filter-btn" onclick="setFilter('music', this)">🎵 Music</button>
+    <button class="filter-btn" onclick="setFilter('comedy', this)">😂 Comedy</button>
+  </div>
+
+  <!-- EVENTS GRID -->
+  <p class="section-title"><span>Featured</span> Events</p>
+  <div class="cards-grid" id="eventsGrid"></div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 ShowTime · All rights reserved · Made with ♥ for great experiences</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

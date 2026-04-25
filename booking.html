@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Tickets — ShowTime</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Show<span>Time</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Movies</a></li>
+      <li><a href="#">Sports</a></li>
+      <li><a href="#">Music</a></li>
+    </ul>
+    <button class="nav-btn">Sign In</button>
+  </nav>
+
+  <!-- BOOKING PAGE -->
+  <main class="booking-page">
+
+    <!-- LEFT: Event Info + Form -->
+    <div class="booking-left">
+
+      <!-- Event Summary Card -->
+      <div class="glass-card event-summary">
+        <div class="event-emoji" id="bookingEmoji">🎬</div>
+        <div class="event-details">
+          <p class="event-category" id="bookingCategory">MOVIE</p>
+          <h2 class="event-name" id="bookingTitle">Interstellar Returns</h2>
+          <p class="event-meta" id="bookingDate">📅 Apr 25, 2025</p>
+          <p class="event-meta" id="bookingVenue">📍 PVR IMAX, Hyderabad</p>
+          <p class="event-price-tag">Starting from <strong id="bookingPrice">₹350</strong></p>
+        </div>
+      </div>
+
+      <!-- Booking Form -->
+      <div class="glass-card booking-form-card">
+        <h3 class="form-title">Your Details</h3>
+        <form id="bookingForm" onsubmit="submitBooking(event)">
+
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="Rahul Sharma"/>
+            <span class="error-msg" id="nameError">Please enter your full name.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="rahul@email.com"/>
+            <span class="error-msg" id="emailError">Please enter a valid email.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" placeholder="10-digit mobile number"/>
+            <span class="error-msg" id="phoneError">Please enter a valid 10-digit number.</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ticketType">Ticket Type</label>
+              <select id="ticketType" onchange="updateSummary()">
+                <option value="350">General — ₹350</option>
+                <option value="600">Premium — ₹600</option>
+                <option value="1000">VIP — ₹1000</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="quantity">Quantity</label>
+              <select id="quantity" onchange="updateSummary()">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">Proceed to Confirm →</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- RIGHT: Seat Map + Order Summary -->
+    <div class="booking-right">
+
+      <!-- Seat Map -->
+      <div class="glass-card seat-map-card">
+        <h3 class="form-title">Pick Your Seats</h3>
+        <div class="screen-label">— SCREEN —</div>
+        <div class="seat-grid" id="seatGrid"></div>
+        <div class="seat-legend">
+          <span class="legend-item"><span class="seat-dot available"></span> Available</span>
+          <span class="legend-item"><span class="seat-dot selected"></span> Selected</span>
+          <span class="legend-item"><span class="seat-dot taken"></span> Taken</span>
+        </div>
+        <p class="selected-seats-label">Selected: <span id="selectedSeatsText">None</span></p>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="glass-card order-summary">
+        <h3 class="form-title">Order Summary</h3>
+        <div class="summary-row">
+          <span>Ticket Type</span>
+          <span id="sumType">General</span>
+        </div>
+        <div class="summary-row">
+          <span>Quantity</span>
+          <span id="sumQty">1</span>
+        </div>
+        <div class="summary-row">
+          <span>Price per ticket</span>
+          <span id="sumUnit">₹350</span>
+        </div>
+        <div class="summary-row">
+          <span>Convenience Fee</span>
+          <span>₹30</span>
+        </div>
+        <div class="summary-divider"></div>
+        <div class="summary-row total-row">
+          <span>Total</span>
+          <span id="sumTotal">₹380</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 ShowTime · All rights reserved</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking Confirmed — ShowTime</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Show<span>Time</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Movies</a></li>
+      <li><a href="#">Sports</a></li>
+      <li><a href="#">Music</a></li>
+    </ul>
+    <button class="nav-btn">Sign In</button>
+  </nav>
+
+  <!-- CONFIRMATION PAGE -->
+  <main class="confirm-page">
+
+    <!-- Ticket Card -->
+    <div class="glass-card ticket-card">
+
+      <!-- Top: Success -->
+      <div class="confirm-top">
+        <div class="checkmark-circle">✓</div>
+        <h2 class="confirm-heading">Booking Confirmed!</h2>
+        <p class="confirm-sub">Your tickets have been booked. Check your email for details.</p>
+      </div>
+
+      <!-- Ticket Tear Line -->
+      <div class="tear-line">
+        <div class="tear-circle left"></div>
+        <div class="tear-dots"></div>
+        <div class="tear-circle right"></div>
+      </div>
+
+      <!-- Ticket Details -->
+      <div class="ticket-details">
+        <div class="ticket-event-row">
+          <span class="ticket-emoji" id="confirmEmoji">🎬</span>
+          <div>
+            <p class="ticket-event-name" id="confirmTitle">Interstellar Returns</p>
+            <p class="ticket-event-cat" id="confirmCategory">MOVIE</p>
+          </div>
+        </div>
+
+        <div class="ticket-info-grid">
+          <div class="ticket-info-item">
+            <p class="info-label">Name</p>
+            <p class="info-value" id="confirmName">Rahul Sharma</p>
+          </div>
+          <div class="ticket-info-item">
+            <p class="info-label">Date</p>
+            <p class="info-value" id="confirmDate">Apr 25, 2025</p>
+          </div>
+          <div class="ticket-info-item">
+            <p class="info-label">Venue</p>
+            <p class="info-value" id="confirmVenue">PVR IMAX, Hyderabad</p>
+          </div>
+          <div class="ticket-info-item">
+            <p class="info-label">Seats</p>
+            <p class="info-value" id="confirmSeats">B3, B4</p>
+          </div>
+          <div class="ticket-info-item">
+            <p class="info-label">Ticket Type</p>
+            <p class="info-value" id="confirmType">General</p>
+          </div>
+          <div class="ticket-info-item">
+            <p class="info-label">Total Paid</p>
+            <p class="info-value accent-val" id="confirmTotal">₹730</p>
+          </div>
+        </div>
+
+        <!-- Booking ID -->
+        <div class="booking-id-row">
+          <span class="info-label">Booking ID</span>
+          <span class="booking-id" id="confirmBookingId">STX-20250425-7843</span>
+        </div>
+
+        <!-- Barcode (fake) -->
+        <div class="barcode">
+          <div class="barcode-inner"></div>
+          <p class="barcode-num" id="barcodeNum">**** **** **** 7843</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="confirm-actions">
+      <button class="glass-btn" onclick="window.print()">🖨️ Print Ticket</button>
+      <button class="glass-btn accent-btn" onclick="window.location.href='index.html'">🎟️ Book More Tickets</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 ShowTime · All rights reserved</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
